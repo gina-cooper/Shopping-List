@@ -9,7 +9,7 @@
 
 <body>
 <div class="header">
- <h1>Shopping List</h1>
+  <h1> <%=  listName  %> </h1>
 </div>
 
 <div class="list">
@@ -18,13 +18,13 @@
   <div class="item" >
     <input type="checkbox" name = "checkbox" value = '<%=i %>' onchange = "this.form.submit();">
     <p><%=  listItems[i]  %></p>
-    <input type="hidden" name="thislist" ></input>
+    <input type="hidden" name="thislist" value="<%= listName %>"></input>
   </div>
     </form>
     <% } %> 
       <form class="item" action="/" method="post">
         <input type="text" name="newItem" placeholder="Add Item" autocomplete="off" autofocus>
-        <button type="submit" name="list" >+</button>
+        <button type="submit" name="list" value="<%= listName %>">+</button>
       </form>
     </div>
  
